@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title> SIGNUP </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script>
+
+function ValidateSIGNUP(){
+    var name=document.forms["SIGNUP_FORM"]["name"].value;
+    if(name=="")
+    {
+        alert("PLEAESE ENTER USER NAME");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le Hello.php
+
+    }
+
+    var email=document.forms["SIGNUP_FORM"]["email"].value;
+    if(email=="" )
+    {
+        alert("PLEAESE ENTER USER EMAIL");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le Hello.php
+    }
+    var password=document.forms["SIGNUP_FORM"]["password"].value;
+    if(password=="")
+    {
+        alert("PLEAESE ENTER USER PASSWORD");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le SIGNUP_CON.php
+
+    }
+    if (password.length<4)
+    {
+        alert("PAASSWORD LENGTH MUST BE ATLEASET 4 CHARACTERS");
+        return false;
+    }
+    var confrim_password=document.forms["SIGNUP_FORM"]["confrim_password"].value;
+    if(confrim_password=="")
+    {
+        alert("PLEAESE CONFIRM PASSWORD");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le SIGNUP_CON.php
+
+    }   
+    if(password!=confrim_password)
+    {
+        alert("PASSWORD DOES NOT MATCH PLEASE CONFIRM PASSWORD CORRECTLY");
+        return false;
+    }
+}
+function match() {  
+ var password=document.forms["SIGNUP_FORM"]["password"].value;  
+  var confirm_password = document.forms["SIGNUP_FORM"]["confirm_password"].value;  
+  if(password != confirm_password)  
+  {
+    alert("PASSWORD DOES NOT MATCH PLEASE CONFIRM PASSWORD CORRECTLY");
+    return false;  //3ashan yefdal wa2ef fel page mayro7sh le SIGNUP_CON.php
+  }  
+}  
+</script>
+
+<body> 
+    
+ <form name ="SIGNUP_FORM" action="SIGNUP_CON.php" onsubmit= "return ValidateSIGNUP()"  method="post">
+     <h2>REGISTER HERE</h2>
+
+
+         <label>PLEASE INSERT A USER NAME</label>
+     <input type="text" name="name" placeholder="ENTER NAME HERE"><br>
+
+     <label>PLEASE INSERT A USER EMAIL</label>
+     <input type="text" name="email" placeholder="example@icloud.com"><br>
+
+     <label>PLEASE INSERT A USER PASSWORD</label>
+     <input type="password" name="password" placeholder="*******"><br>
+
+     <label>PLEASE CONFIRM PASSWORD</label>
+     <input type="password" name="confrim_password" placeholder="*******"><br>
+
+     
+     <button type="SUBMIT" onclick="match()" >SIGNUP</button>
+     <a href="LOGIN.html">GO BACK TO LOGIN PAGE HERE</a>
+
+
+</form>
+</body>
+</html>

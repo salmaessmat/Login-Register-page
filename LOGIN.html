@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title> HELLO!LOGIN </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script>
+
+function ValidateLOGIN(){
+
+    var email=document.forms["LOGIN_FORM"]["email"].value;
+    if(email=="" )
+    {
+        alert("PLEAESE ENTER USER EMAIL");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le LOGIN_CON.php
+    }
+    var password=document.forms["LOGIN_FORM"]["password"].value;
+    if(password=="")
+    {
+        alert("PLEAESE ENTER USER PASSWORD");
+        return false; //3ashan yefdal wa2ef fel page mayro7sh le LOGIN_CON.php
+
+    }
+}
+</script>
+
+<body> 
+
+ <form name ="LOGIN_FORM" action="LOGIN_CON.php" onsubmit="return ValidateLOGIN()" method="post">
+     <h2>LOGIN</h2>
+
+     <label>USER EMAIL</label>
+     <input type="text" name="email" placeholder="example@icloud.com"><br>
+     <label>USER PASSWORD</label>
+     <input type="password" name="password" placeholder="*******"><br>
+     <button type="SUBMIT">LOGIN</button>
+     <a href="SIGNUP.html">DON'T HAVE AN ACCOUNT? SIGNUP HERE!</a>
+
+
+</form>
+</body>
+</html>
